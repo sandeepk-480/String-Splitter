@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.output-section {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+#output{
+  padding-bottom: 2rem;
+  /* display: none; Initially hidden */
+}
+
+.copy-button {
+  margin-left: 10px;
+  padding: 0.3rem;
+  font-size: 0.9rem;
+  background-color: skyblue;
+  border-radius: 0.4rem;
+  /* display: none; Initially hidden */
+}

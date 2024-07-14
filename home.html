@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Splitter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>String Splitter</h1>
+        <textarea id="inputText" rows="10" placeholder="Enter a long string here..."></textarea>
+        <button onclick="splitString()">Split String</button>
+        <div id="output">
+          <div class="output-section" id="output1"></div>
+          <button onclick="copyToClipboard('output1')" class="copy-button">Copy-1</button>
+          <div class="output-section" id="output2"></div>
+          <button onclick="copyToClipboard('output2')" class="copy-button">Copy-2</button>
+          <div class="output-section" id="output3"></div>
+          <button onclick="copyToClipboard('output3')" class="copy-button">Copy-3</button>
+        </div>
+      </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

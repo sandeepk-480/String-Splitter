@@ -23,6 +23,8 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  background-color: rgb(44, 174, 225);
+  border-radius: 0.4rem;
 }
 
 .output-section {
@@ -43,6 +45,5 @@ button {
   padding: 0.3rem;
   font-size: 0.9rem;
   background-color: skyblue;
-  border-radius: 0.4rem;
   /* display: none; Initially hidden */
 }

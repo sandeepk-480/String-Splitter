@@ -28,20 +28,26 @@ function splitString() {
       currentLength += paragraph.length;
   }
 
-  // Display the sections
-  document.getElementById('output1').textContent = `'''${sections[0].trim()}'''`;
-  document.getElementById('output2').textContent = `'''${sections[1].trim()}'''`;
-  document.getElementById('output3').textContent = `'''${sections[2].trim()}'''`;
+  // Function to get the first 50 words of a text
+  function getFirst50Words(text) {
+    return text.split(' ').slice(0, 10).join(' ') + (text.split(' ').length > 50 ? '...' : '');
+  }
 
-  // // Show the output sections and copy buttons
-  // document.getElementById('output1').style.display = 'block';
-  // document.getElementById('output2').style.display = 'block';
-  // document.getElementById('output3').style.display = 'block';
-  // document.querySelectorAll('.copy-button').forEach(button => button.style.display = 'inline-block');
+  // Display the sections
+  document.getElementById('output1').innerHTML = `'''${getFirst50Words(sections[0].trim())}'''`;
+  document.getElementById('output2').innerHTML = `'''${getFirst50Words(sections[1].trim())}'''`;
+  document.getElementById('output3').innerHTML = `'''${getFirst50Words(sections[2].trim())}'''`;
+
+  // Store full sections for copying
+  document.getElementById('output1').setAttribute('data-fulltext', `'''${sections[0].trim()}'''\n\nTranslate this text into English`);
+  document.getElementById('output2').setAttribute('data-fulltext', `'''${sections[1].trim()}'''\n\nTranslate this text into English`);
+  document.getElementById('output3').setAttribute('data-fulltext', `'''${sections[2].trim()}'''\n\nTranslate this text into English`);
+
 }
 
 function copyToClipboard(elementId) {
-  const textToCopy = document.getElementById(elementId).textContent.trim();
+  const element = document.getElementById(elementId);
+  const textToCopy = element.getAttribute('data-fulltext');
 
   // Create a temporary textarea to perform the copy operation
   const tempTextArea = document.createElement('textarea');
@@ -52,5 +58,5 @@ function copyToClipboard(elementId) {
   document.body.removeChild(tempTextArea);
 
   // Provide visual feedback or alert
-  alert('Copied to clipboard: ' + textToCopy.slice(0,100));
+  alert("Copied to clipboard: \n" + textToCopy.slice(0,20) + "'''");
 }

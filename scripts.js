@@ -39,9 +39,9 @@ function splitString() {
   document.getElementById('output3').innerHTML = `'''${getFirst50Words(sections[2].trim())}'''`;
 
   // Store full sections for copying
-  document.getElementById('output1').setAttribute('data-fulltext', `'''${sections[0].trim()}'''\n\nTranslate this text into English`);
-  document.getElementById('output2').setAttribute('data-fulltext', `'''${sections[1].trim()}'''\n\nTranslate this text into English`);
-  document.getElementById('output3').setAttribute('data-fulltext', `'''${sections[2].trim()}'''\n\nTranslate this text into English`);
+  document.getElementById('output1').setAttribute('data-fulltext', `'''${sections[0].trim()}'''\n\nTranslate the entire given text into English while maintaining the original meaning of the text and the sentence, and extra line break for paragraphs.`);
+  document.getElementById('output2').setAttribute('data-fulltext', `'''${sections[1].trim()}'''\n\nTranslate the entire given text into English while maintaining the original meaning of the text and the sentence, and extra line break for paragraphs.`);
+  document.getElementById('output3').setAttribute('data-fulltext', `'''${sections[2].trim()}'''\n\nTranslate the entire given text into English while maintaining the original meaning of the text and the sentence, and extra line break for paragraphs.`);
 
 }
 

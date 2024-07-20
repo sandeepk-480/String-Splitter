@@ -1,5 +1,6 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: whitesmoke;
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -14,9 +15,11 @@ body {
 
 textarea {
   width: 100%;
+  background-color: rgb(240, 235, 235);
   padding: 10px;
   margin-bottom: 10px;
   font-size: 16px;
+  border-radius: 20px;
 }
 
 button {
@@ -25,14 +28,18 @@ button {
   cursor: pointer;
   background-color: rgb(44, 174, 225);
   border-radius: 0.4rem;
+  border: none;
 }
 
 .output-section {
   border: 1px solid #ccc;
+  background-color: rgb(240, 235, 235);
   padding: 10px;
   margin-top: 10px;
   text-align: left;
   white-space: pre-wrap;
+  margin-bottom: 5px;
+  border-radius: 8px;
 }
 
 #output{
@@ -42,8 +49,20 @@ button {
 
 .copy-button {
   margin-left: 10px;
-  padding: 0.3rem;
-  font-size: 0.9rem;
-  background-color: skyblue;
+  padding: 0.3rem 0.4rem;
+  font-size: 0.8rem;
+  background-color: rgb(44, 174, 225);
+  /* color: white; */
   /* display: none; Initially hidden */
+}
+
+#msg{
+  background-color: rgb(47, 102, 255);
+  position: absolute;
+  left: 80%;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: white;
+  display: none;
 }

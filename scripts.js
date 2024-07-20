@@ -29,14 +29,14 @@ function splitString() {
   }
 
   // Function to get the first 50 words of a text
-  function getFirst50Words(text) {
+  function getFirst10Words(text) {
     return text.split(' ').slice(0, 10).join(' ') + (text.split(' ').length > 50 ? '...' : '');
   }
 
   // Display the sections
-  document.getElementById('output1').innerHTML = `'''${getFirst50Words(sections[0].trim())}'''`;
-  document.getElementById('output2').innerHTML = `'''${getFirst50Words(sections[1].trim())}'''`;
-  document.getElementById('output3').innerHTML = `'''${getFirst50Words(sections[2].trim())}'''`;
+  document.getElementById('output1').innerHTML = `${getFirst10Words(sections[0].trim())}`;
+  document.getElementById('output2').innerHTML = `${getFirst10Words(sections[1].trim())}`;
+  document.getElementById('output3').innerHTML = `${getFirst10Words(sections[2].trim())}`;
 
   // Store full sections for copying
   document.getElementById('output1').setAttribute('data-fulltext', `'''${sections[0].trim()}'''\n\nTranslate this text into English`);
@@ -44,6 +44,7 @@ function splitString() {
   document.getElementById('output3').setAttribute('data-fulltext', `'''${sections[2].trim()}'''\n\nTranslate this text into English`);
 
 }
+
 
 function copyToClipboard(elementId) {
   const element = document.getElementById(elementId);
@@ -57,6 +58,10 @@ function copyToClipboard(elementId) {
   document.execCommand('copy');
   document.body.removeChild(tempTextArea);
 
-  // Provide visual feedback or alert
-  alert("Copied to clipboard: \n" + textToCopy.slice(0,20) + "'''");
+  // Provide visual feedback or message
+  showMsg = document.getElementById('msg').style.display='block'
+  setTimeout(function() {
+    document.getElementById('msg').style.display='none'
+  }, 2000);
+
 }

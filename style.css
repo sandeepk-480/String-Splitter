@@ -19,6 +19,7 @@ body {
 
 textarea {
   width: 100%;
+  color: white;
   background-color: rgb(55, 51, 51);
   padding: 10px;
   margin-bottom: 10px;
@@ -33,6 +34,7 @@ button {
   cursor: pointer;
   background-color: rgb(44, 174, 225);
   border-radius: 0.4rem;
+  border: none;
 }
 
 .output-section {

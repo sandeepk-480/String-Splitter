@@ -1,6 +1,6 @@
 function splitString() {
     const inputText = document.getElementById('inputText').value.trim();
-    const MAX_LENGTH = 3000;
+    const MAX_LENGTH = 2100;
 
     if (inputText.length === 0) {
         alert('Please enter a valid string.');

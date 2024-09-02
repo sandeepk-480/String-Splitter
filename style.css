@@ -1,74 +1,80 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: rgb(28, 24, 24);
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-}
+    font-family: Arial, sans-serif;
+    background-color: rgb(28, 24, 24);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .heading{
+    color: white;
+  }
+  
+  .container {
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  textarea {
+    width: 100%;
+    color: white;
+    background-color: rgb(55, 51, 51);
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: none
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgb(44, 174, 225);
+    border-radius: 0.4rem;
+    border: none;
+  }
+  
+  .output-section {
+    border: 1px solid #ccc;
+    background-color: rgb(55, 51, 51);
+    padding: 10px;
+    margin-top: 10px;
+    text-align: left;
+    white-space: pre-wrap;
+    margin-bottom: 5px;
+    border-radius: 8px;
+  }
+  
+  #output{
+    padding-bottom: 2rem;
+    /* display: none; Initially hidden */
+  }
+  
+  .output-section{
+    color: rgb(197, 190, 190);
+    text-align: center;
+  }
 
-.heading{
-  color: white;
-}
-
-.container {
-  width: 80%;
-  max-width: 600px;
-  text-align: center;
-}
-
-textarea {
-  width: 100%;
-  color: white;
-  background-color: rgb(55, 51, 51);
-  padding: 10px;
-  margin-bottom: 10px;
-  font-size: 16px;
-  border-radius: 20px;
-  border: none
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: rgb(44, 174, 225);
-  border-radius: 0.4rem;
-  border: none;
-}
-
-.output-section {
-  border: 1px solid #ccc;
-  background-color: rgb(55, 51, 51);
-  padding: 10px;
-  margin-top: 10px;
-  text-align: left;
-  white-space: pre-wrap;
-  margin-bottom: 5px;
-  border-radius: 8px;
-}
-
-#output{
-  padding-bottom: 2rem;
-  /* display: none; Initially hidden */
-}
-
-.copy-button {
-  margin-left: 10px;
-  padding: 0.3rem 0.4rem;
-  font-size: 0.8rem;
-  background-color: rgb(44, 174, 225);
-  /* color: white; */
-  /* display: none; Initially hidden */
-}
-
-#msg{
-  background-color: rgb(47, 102, 255);
-  position: absolute;
-  left: 80%;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  color: white;
-  display: none;
-}
+  .copy-button {
+    margin-left: 10px;
+    padding: 0.3rem 0.4rem;
+    font-size: 0.8rem;
+    background-color: rgb(44, 174, 225);
+    /* color: white; */
+    /* display: none; Initially hidden */
+  }
+  
+  #msg{
+    background-color: rgb(47, 102, 255);
+    position: fixed;
+    /* top: 3%; */
+    left: 80%;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: white;
+    display: none;
+  }

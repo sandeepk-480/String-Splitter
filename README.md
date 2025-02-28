@@ -1,5 +1,5 @@
 <h1>String Splitter</h1>
-<p>For splitting light novel chapter into parts with prompts, so that we can directly use it in chatgpt for translation</p>
+<p>For splitting korean light novel chapter into parts with prompts, so that we can directly use it in chatgpt for translation</p>
 
 
 <h3>** Custom Instruction **</h3>

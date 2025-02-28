@@ -1,6 +1,6 @@
 function splitString() {
     const inputText = document.getElementById('inputText').value.trim();
-    const MAX_LENGTH = 2100;
+    const MAX_LENGTH = 2000;
 
     if (inputText.length === 0) {
         alert('Please enter a valid string.');
@@ -45,7 +45,8 @@ function splitString() {
         outputDiv.className = 'output-section';
         outputDiv.id = `output${index + 1}`;
         outputDiv.innerHTML = getFirst10Words(section);
-        outputDiv.setAttribute('data-fulltext', `'''${section}'''\n[${index + 1}]\nTranslate the entire given text into English while maintaining the original meaning of the text and the sentence, and extra line break for paragraphs.`);
+        const prompt_text = index==0 ? 'Translate the following passage from my Korean novel:' : 'Next Part:';
+        outputDiv.setAttribute('data-fulltext', `${prompt_text}\n'''${section}'''\n[${index + 1}]`);
         
         const copyButton = document.createElement('button');
         copyButton.className = 'copy-button';

@@ -49,7 +49,7 @@ function splitString() {
         outputDiv.className = 'output-section';
         outputDiv.id = `output${index + 1}`;
         outputDiv.innerHTML = getFirst8Words(section);
-        const prompt_text = index==0 ? 'Translate the following passage from my Korean novel:' : 'Next Part:';
+        const prompt_text = 'Translate the following passage from my Korean novel:';
         outputDiv.setAttribute('data-fulltext', `${prompt_text}\n'''${section}'''\n[${index + 1}]`);
         
         const copyButton = document.createElement('button');

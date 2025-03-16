@@ -9,9 +9,17 @@
 <body>
     <div class="container">
         <div id="msg" style="display: none;">Copied</div>
+        <div id="revert_msg" style="display: none;">Restored</div>
+
         <h1 class="heading">String Splitter</h1>
         <textarea id="inputText" rows="10" placeholder="Enter a long string here..."></textarea>
-        <button onclick="splitString()">Split String</button>
+        
+        <div class="button-container">
+            <button onclick="clearText()">Clear</button>
+            <button id="split" onclick="splitString()">Split String</button>
+            <button onclick="revertText()">Revert</button>
+        </div>
+        
         <div id="output"></div> <!-- This will hold the dynamically created output sections -->
     </div>
     <script src="scripts.js"></script>

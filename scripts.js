@@ -1,3 +1,5 @@
+let lastInputText = ''; // Store last input text
+
 function splitString() {
     const inputText = document.getElementById('inputText').value.trim();
     const MAX_LENGTH = 2000;
@@ -6,10 +8,12 @@ function splitString() {
         alert('Please enter a valid string.');
         return;
     }
+
+    // Save current state before modifying
+    lastInputText = inputText;
   
     // Split the input text into paragraphs
     const paragraphs = inputText.split('\n').filter(paragraph => paragraph.trim().length > 0);
-  
     const sections = [];
     let currentSection = "";
 
@@ -34,9 +38,9 @@ function splitString() {
     outputContainer.innerHTML = '';
 
     // Function to get the first 10 words of a text
-    function getFirst10Words(text) {
+    function getFirst8Words(text) {
         const words = text.split(' ');
-        return words.slice(0, 10).join(' ') + (words.length > 10 ? '...' : '');
+        return words.slice(0, 8).join(' ') + (words.length > 8 ? '...' : '');
     }
   
     // Create output sections dynamically
@@ -44,7 +48,7 @@ function splitString() {
         const outputDiv = document.createElement('div');
         outputDiv.className = 'output-section';
         outputDiv.id = `output${index + 1}`;
-        outputDiv.innerHTML = getFirst10Words(section);
+        outputDiv.innerHTML = getFirst8Words(section);
         const prompt_text = index==0 ? 'Translate the following passage from my Korean novel:' : 'Next Part:';
         outputDiv.setAttribute('data-fulltext', `${prompt_text}\n'''${section}'''\n[${index + 1}]`);
         
@@ -58,25 +62,26 @@ function splitString() {
     });
 }
 
-// function copyToClipboard(elementId) {
-//     const element = document.getElementById(elementId);
-//     const textToCopy = element.getAttribute('data-fulltext');
-  
-//     // Create a temporary textarea to perform the copy operation
-//     const tempTextArea = document.createElement('textarea');
-//     tempTextArea.value = textToCopy;
-//     document.body.appendChild(tempTextArea);
-//     tempTextArea.select();
-//     document.execCommand('copy');
-//     document.body.removeChild(tempTextArea);
-  
-//     // Provide visual feedback or message
-//     const msgElement = document.getElementById('msg');
-//     msgElement.style.display = 'block';
-//     setTimeout(function() {
-//         msgElement.style.display = 'none';
-//     }, 2000);
-// }
+function clearText() {
+    document.getElementById('inputText').value = ''; // Clear textarea
+    document.getElementById('output').innerHTML = ''; // Clear output sections
+}
+
+function revertText() {
+    if (lastInputText === '') {
+        alert('No previous content to restore!');
+        return;
+    }
+    // Provide visual feedback or message
+    const msgElement = document.getElementById('revert_msg');
+    msgElement.style.display = 'block';
+    setTimeout(function() {
+        msgElement.style.display = 'none';
+    }, 2000);
+
+    document.getElementById('inputText').value = lastInputText;
+    lastInputText = ''; // Prevent multiple revert actions
+}
 
 function copyToClipboard(elementId) {
     const element = document.getElementById(elementId);
